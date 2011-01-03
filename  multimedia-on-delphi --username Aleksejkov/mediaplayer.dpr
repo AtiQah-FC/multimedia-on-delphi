@@ -1,4 +1,4 @@
-program mplayer;
+program mediaplayer;
 
 uses
   Forms,
