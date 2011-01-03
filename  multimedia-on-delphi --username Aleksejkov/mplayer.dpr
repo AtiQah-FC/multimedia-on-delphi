@@ -1,4 +1,4 @@
-program EasyPlayer;
+program mplayer;
 
 uses
   Forms,

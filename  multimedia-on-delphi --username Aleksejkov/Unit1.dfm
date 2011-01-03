@@ -1,9 +1,9 @@
 object Form1: TForm1
   Left = 270
   Top = 246
-  Width = 443
-  Height = 150
   Caption = 'EasyPlayer v4'
+  ClientHeight = 191
+  ClientWidth = 493
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 8
-    Top = 8
+    Top = 64
     Width = 417
     Height = 20
     AutoSize = False
@@ -30,8 +30,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 192
-    Top = 80
+    Left = 208
+    Top = 158
     Width = 55
     Height = 25
     AutoSize = False
@@ -45,8 +45,8 @@ object Form1: TForm1
     Layout = tlCenter
   end
   object Label3: TLabel
-    Left = 264
-    Top = 80
+    Left = 312
+    Top = 158
     Width = 55
     Height = 25
     AutoSize = False
@@ -61,7 +61,7 @@ object Form1: TForm1
   end
   object Label4: TLabel
     Left = 8
-    Top = 32
+    Top = 98
     Width = 169
     Height = 16
     AutoSize = False
@@ -75,7 +75,7 @@ object Form1: TForm1
   end
   object Label5: TLabel
     Left = 192
-    Top = 32
+    Top = 98
     Width = 233
     Height = 16
     AutoSize = False
@@ -89,7 +89,7 @@ object Form1: TForm1
   end
   object Button1: TButton
     Left = 8
-    Top = 80
+    Top = 158
     Width = 75
     Height = 25
     Caption = 'Open'
@@ -97,8 +97,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 96
-    Top = 80
+    Left = 102
+    Top = 158
     Width = 75
     Height = 25
     Caption = 'Play/Pause'
@@ -106,16 +106,16 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object MediaPlayer1: TMediaPlayer
-    Left = 160
-    Top = 8
+    Left = 232
+    Top = 62
     Width = 253
     Height = 30
     Visible = False
     TabOrder = 2
   end
   object Button3: TButton
-    Left = 352
-    Top = 80
+    Left = 410
+    Top = 158
     Width = 75
     Height = 25
     Caption = 'PlayList'
@@ -123,23 +123,31 @@ object Form1: TForm1
     OnClick = Button3Click
   end
   object ProgressBar1: TProgressBar
-    Left = 8
-    Top = 56
+    Left = 40
+    Top = 120
     Width = 417
     Height = 17
-    Min = 0
     Max = 417
     TabOrder = 4
     OnMouseDown = ProgressBar1MouseDown
   end
+  object Button4: TButton
+    Left = 400
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'E X I T'
+    TabOrder = 5
+    OnClick = Button4Click
+  end
   object OpenDialog1: TOpenDialog
     Filter = '*.mp3|*.mp3|*.wma|*.wma|*.wav|*.wav'
-    Left = 72
+    Left = 336
     Top = 8
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 112
+    Left = 248
     Top = 8
   end
 end

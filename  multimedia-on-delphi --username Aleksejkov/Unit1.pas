@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, MPlayer, ExtCtrls, Gauges, ComCtrls, ID3, FileCtrl;
+  StdCtrls, MPlayer, ExtCtrls, Gauges, ComCtrls, ID3, FileCtrl, Buttons;
 
 type
   TForm1 = class(TForm)
@@ -20,6 +20,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     ProgressBar1: TProgressBar;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -27,6 +28,7 @@ type
     procedure ProgressBar1MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -77,6 +79,7 @@ begin
   mediaplayer1.Play;
 end;
 
+
 procedure TForm1.Button1Click(Sender: TObject);
 begin
 if OpenDialog1.Execute then
@@ -110,6 +113,11 @@ procedure TForm1.Button3Click(Sender: TObject);
 begin
 if form2.Visible then form2.Close
 else form2.Show;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+ close
 end;
 
 procedure TForm1.ProgressBar1MouseDown(Sender: TObject;
