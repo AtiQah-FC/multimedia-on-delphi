@@ -21,6 +21,7 @@ type
     Label5: TLabel;
     ProgressBar1: TProgressBar;
     Button4: TButton;
+    Button5: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -29,6 +30,7 @@ type
       Shift: TShiftState; X, Y: Integer);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,7 +44,7 @@ var
 
 implementation
 
-uses Unit2;
+uses Unit2,Unit4;
 
 {$R *.DFM}
 
@@ -118,6 +120,11 @@ end;
 procedure TForm1.Button4Click(Sender: TObject);
 begin
  close
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+ Form4.Show;
 end;
 
 procedure TForm1.ProgressBar1MouseDown(Sender: TObject;
