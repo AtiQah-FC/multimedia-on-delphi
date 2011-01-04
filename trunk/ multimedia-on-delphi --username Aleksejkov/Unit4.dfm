@@ -353,13 +353,14 @@ object Form4: TForm4
     NumGlyphs = 4
     OnClick = SpeedButton1Click
   end
-  object MediaPlayer1: TMediaPlayer
+  object MediaPlayer: TMediaPlayer
     Left = 168
     Top = 536
     Width = 253
     Height = 30
     Visible = False
     TabOrder = 0
+    OnNotify = MediaPlayerNotify
   end
   object OpenDialog: TOpenDialog
     Left = 16

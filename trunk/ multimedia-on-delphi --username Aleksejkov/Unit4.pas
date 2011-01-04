@@ -13,7 +13,7 @@ type
     OpenDialog: TOpenDialog;
     SpeedButton2: TSpeedButton;
     SpeedButton1: TSpeedButton;
-    MediaPlayer1: TMediaPlayer;
+    MediaPlayer: TMediaPlayer;
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -33,12 +33,12 @@ implementation
 
 procedure TForm4.FormCreate(Sender: TObject);
 begin
-   MediaPlayer1.Display := Form4;
+   MediaPlayer.Display:=Form4;
 
    // это можно сделать во время создания
    // формы. Но на всякий случай ...
-   SpeedButton1.GroupIndex := 1;
-   SpeedButton1.AllowAllUp := True;
+   SpeedButton1.GroupIndex:=1;
+   SpeedButton1.AllowAllUp:=True;
 end;
 
 // возвращает размер изображения AVI файла
@@ -57,10 +57,10 @@ var
     end;
 
 begin
-    fst := TFileStream.Create(f,fmOpenRead);
+    fst:=TFileStream.Create(f,fmOpenRead);
     fst.Read(header,sizeof(header));
-    w := header.Width;
-    h := header.Height;
+    w:=header.Width;
+    h:=header.Height;
     fst.Destroy;
 end;
 
@@ -75,7 +75,7 @@ var
     k: real;        // коэф. масштабирования
 
 begin
-    OpenDialog.Title := 'Выбор клипа';
+    OpenDialog.Title:='Выбор клипа';
     if not OpenDialog.Execute
       then exit;
 
@@ -89,29 +89,29 @@ begin
     mw:=Form4.ClientWidth;
 
     if mh > height
-        then kh :=1
-        else kh := mh/height;
+        then kh:=1
+        else kh:= mh/height;
 
     if mw > width
-        then kw :=1
-        else kw := mw/width;
+        then kw:=1
+        else kw:= mw/width;
 
     if kw < kh
-        then k := kw
-        else k := kh;
+        then k:= kw
+        else k:= kh;
 
     // здесь масштаб определен
 
-    width  := Round(width * k);
-    height := Round(height * k);
+    width:= Round(width * k);
+    height:= Round(height * k);
 
-    left := (Form4.ClientWidth - width ) div 2;
-    top := 10;
+    left:=(Form4.ClientWidth - width) div 2;
+    top:=10;
 
-    MediaPlayer1.FileName := OpenDialog.FileName;
-    MediaPlayer1.Open;
-    MediaPlayer1.DisplayRect := Rect(left,top,width,height);
-    SpeedButton1.Enabled := True;
+    MediaPlayer.FileName:=OpenDialog.FileName;
+    MediaPlayer.Open;
+    MediaPlayer.DisplayRect:=Rect(left,top,width,height);
+    SpeedButton1.Enabled:=True;
 end;
 
 // щелчок на кнопке Play/Stop
@@ -120,23 +120,25 @@ begin
     if SpeedButton1.Down  then
     begin
       // начать воспроизведение
-      MediaPlayer1.Play;
-      SpeedButton1.Hint := 'Stop';
+      MediaPlayer.Play;
+      SpeedButton1.Hint:='Stop';
     end
     else begin
       // остановить воспроизведение
-      MediaPlayer1.Stop;
-      SpeedButton1.Hint := 'Play';
+      MediaPlayer.Stop;
+      SpeedButton1.Hint:='Play';
     end;
 end;
 
 // сигнал от плейера
+
+
 procedure TForm4.MediaPlayerNotify(Sender: TObject);
 begin
-  if (MediaPlayer1.Mode = mpStopped )
+  if (MediaPlayer.Mode=mpStopped )
      and SpeedButton1.Down
   then
-     SpeedButton1.Down := False; // "отжать" кнопку Play
+     SpeedButton1.Down:=False; // "отжать" кнопку Play
 end;
 
 end.
