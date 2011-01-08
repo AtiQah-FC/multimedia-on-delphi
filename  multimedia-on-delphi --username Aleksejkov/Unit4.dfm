@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 584
-  ClientWidth = 960
+  ClientHeight = 588
+  ClientWidth = 989
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +11,7 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object SpeedButton2: TSpeedButton
@@ -363,6 +364,7 @@ object Form4: TForm4
     OnNotify = MediaPlayerNotify
   end
   object OpenDialog: TOpenDialog
+    Filter = 'AVI '#1092#1072#1081#1083'|*.avi'
     Left = 16
     Top = 16
   end

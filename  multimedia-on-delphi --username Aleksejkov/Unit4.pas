@@ -101,13 +101,11 @@ begin
         else k:= kh;
 
     // здесь масштаб определен
-
     width:= Round(width * k);
     height:= Round(height * k);
 
     left:=(Form4.ClientWidth - width) div 2;
     top:=10;
-
     MediaPlayer.FileName:=OpenDialog.FileName;
     MediaPlayer.Open;
     MediaPlayer.DisplayRect:=Rect(left,top,width,height);
