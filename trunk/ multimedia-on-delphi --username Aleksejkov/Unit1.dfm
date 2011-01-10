@@ -140,17 +140,8 @@ object Form1: TForm1
     TabOrder = 5
     OnClick = Button4Click
   end
-  object Button5: TButton
-    Left = 16
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Show Video'
-    TabOrder = 6
-    OnClick = Button5Click
-  end
   object OpenDialog1: TOpenDialog
-    Filter = '*.mp3|*.mp3|*.wma|*.wma|*.wav|*.wav'
+    Filter = '*.mp3|*.mp3|*.wma|*.wma|*.wav|*.wav|*.avi|*.avi'
     Left = 336
     Top = 8
   end
