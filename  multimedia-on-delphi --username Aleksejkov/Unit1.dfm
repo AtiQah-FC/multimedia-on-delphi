@@ -141,7 +141,7 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object OpenDialog1: TOpenDialog
-    Filter = '*.mp3|*.mp3|*.wma|*.wma|*.wav|*.wav|*.avi|*.avi'
+    Filter = '*.mp3|*.mp3|*.wma|*.wma|*.wav|*.wav|*.avi|*.avi|ALL|*.*'
     Left = 336
     Top = 8
   end
