@@ -26,6 +26,10 @@ type
     xpmnfst1: TXPManifest;
     pb2: TPaintBox;
     Timer4: TTimer;
+    mm1: TMainMenu;
+    PlayList1: TMenuItem;
+    Save1: TMenuItem;
+    Load1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure PlayStrem;
     procedure btn4Click(Sender: TObject);

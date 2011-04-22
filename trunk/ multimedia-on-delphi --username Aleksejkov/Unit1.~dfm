@@ -4,13 +4,13 @@ object Form1: TForm1
   Width = 591
   Height = 395
   Caption = 'Form1'
-  Color = clWhite
-  TransparentColorValue = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  Menu = mm1
   OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -41,9 +41,7 @@ object Form1: TForm1
     Left = 128
     Top = 184
     Width = 249
-    Height = 105
-    Color = clWhite
-    ParentColor = False
+    Height = 113
   end
   object TrackBar1: TTrackBar
     Left = 8
@@ -60,7 +58,6 @@ object Form1: TForm1
     Top = 8
     Width = 337
     Height = 169
-    Color = clAqua
     ItemHeight = 13
     TabOrder = 1
     OnDblClick = lst1DblClick
@@ -149,5 +146,20 @@ object Form1: TForm1
     OnTimer = Timer4Timer
     Left = 504
     Top = 272
+  end
+  object mm1: TMainMenu
+    Left = 536
+    Top = 272
+    object PlayList1: TMenuItem
+      Caption = 'PlayList'
+      object Save1: TMenuItem
+        Caption = 'Save'
+        ShortCut = 16467
+      end
+      object Load1: TMenuItem
+        Caption = 'Load'
+        ShortCut = 16460
+      end
+    end
   end
 end
