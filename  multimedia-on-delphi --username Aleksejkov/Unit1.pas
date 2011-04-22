@@ -92,6 +92,7 @@ begin
 	// Initialize audio - default device, 44100hz, stereo, 16 bits
 	if not BASS_Init(-1, 44100, 0, Handle, nil) then
 		Error('Error initializing audio!');
+  AnimateWindow(Form1.Handle, 1000, AW_CENTER);  
 end;
 
 
