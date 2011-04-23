@@ -284,7 +284,6 @@ end;
 procedure TForm1.btn5Click(Sender: TObject);
 begin
  Form2.btn1Click(Sender);
- AnimateWindow(Form2.Handle, 1000, AW_VER_NEGATIVE);
  Form2.show
 end;
 
