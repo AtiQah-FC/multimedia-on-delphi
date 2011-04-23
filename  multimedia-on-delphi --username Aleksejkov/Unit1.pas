@@ -28,6 +28,7 @@ type
     Timer4: TTimer;
     btn5: TButton;
     btn7: TButton;
+    btn8: TButton;
     procedure FormCreate(Sender: TObject);
     procedure PlayStrem;
     procedure btn4Click(Sender: TObject);
@@ -49,6 +50,7 @@ type
     procedure Timer4Timer(Sender: TObject);
     procedure btn5Click(Sender: TObject);
     procedure btn7Click(Sender: TObject);
+    procedure btn8Click(Sender: TObject);
   private
     { Private declarations }
     modc: Integer;
@@ -69,7 +71,7 @@ var
 
 implementation
 
-uses Unit2, EQ_DEMO;
+uses Unit2, EQ_DEMO, Trecord;
 
 {$R *.dfm}
 {$R bass.res}
@@ -292,6 +294,11 @@ begin
   if stream<>0 then
   EQ;
   Form3.show;
+end;
+
+procedure TForm1.btn8Click(Sender: TObject);
+begin
+  form4.Show;
 end;
 
 end.
