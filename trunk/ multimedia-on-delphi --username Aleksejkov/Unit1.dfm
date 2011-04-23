@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 1097
-  Top = 157
+  Left = 776
+  Top = 166
   Width = 591
   Height = 395
   Caption = 'Form1'
@@ -42,7 +42,7 @@ object Form1: TForm1
     Top = 184
     Width = 249
     Height = 105
-    Color = clWhite
+    Color = clGray
     ParentColor = False
   end
   object TrackBar1: TTrackBar
@@ -120,13 +120,22 @@ object Form1: TForm1
     OnMouseDown = pb1MouseDown
   end
   object btn5: TButton
-    Left = 456
-    Top = 72
+    Left = 496
+    Top = 184
     Width = 75
     Height = 25
     Caption = 'Video'
     TabOrder = 8
     OnClick = btn5Click
+  end
+  object btn7: TButton
+    Left = 496
+    Top = 128
+    Width = 75
+    Height = 25
+    Caption = 'Equalaizer'
+    TabOrder = 9
+    OnClick = btn7Click
   end
   object dlgOpen1: TOpenDialog
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]

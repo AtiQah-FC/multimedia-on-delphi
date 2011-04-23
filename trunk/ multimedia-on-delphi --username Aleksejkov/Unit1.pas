@@ -27,6 +27,7 @@ type
     pb2: TPaintBox;
     Timer4: TTimer;
     btn5: TButton;
+    btn7: TButton;
     procedure FormCreate(Sender: TObject);
     procedure PlayStrem;
     procedure btn4Click(Sender: TObject);
@@ -47,6 +48,7 @@ type
       Shift: TShiftState; X, Y: Integer);
     procedure Timer4Timer(Sender: TObject);
     procedure btn5Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
     modc: Integer;
@@ -67,7 +69,7 @@ var
 
 implementation
 
-uses Unit2;
+uses Unit2, EQ_DEMO;
 
 {$R *.dfm}
 {$R bass.res}
@@ -98,7 +100,9 @@ begin
 	// Initialize audio - default device, 44100hz, stereo, 16 bits
 	if not BASS_Init(-1, 44100, 0, Handle, nil) then
 		Error('Error initializing audio!');
-  AnimateWindow(Form1.Handle, 1000, AW_CENTER);  
+  AnimateWindow(Form1.Handle, 1000, AW_CENTER);
+  BASS_Start();
+  BASS_SetConfig(BASS_CONFIG_BUFFER,1000);
 end;
 
 
@@ -110,7 +114,7 @@ if (lst1.ItemIndex<>-1) and (BASS_ChannelIsActive(stream)<>BASS_ACTIVE_PLAYING) 
       Bass_ChannelPlay(stream, false)
     else
       begin
-        stream:=Bass_StreamCreateFile(false, PChar(lst1.Items[lst1.ItemIndex]),0,0,0);
+        stream:=Bass_StreamCreateFile(false, PChar(lst1.Items[lst1.ItemIndex]),0,0,BASS_SAMPLE_LOOP);
         Bass_ChannelPlay(stream, false);
       end;
 
@@ -283,6 +287,13 @@ begin
  Form2.btn1Click(Sender);
  AnimateWindow(Form2.Handle, 1000, AW_VER_NEGATIVE);
  Form2.show
+end;
+
+procedure TForm1.btn7Click(Sender: TObject);
+begin
+  if stream<>0 then
+  EQ;
+  Form3.show;
 end;
 
 end.
