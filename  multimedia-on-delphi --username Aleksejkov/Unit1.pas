@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, ExtCtrls, bass, ShellApi, XPMan, Menus;
+  Dialogs, StdCtrls, ComCtrls, ExtCtrls, bass, ShellApi, XPMan, Menus, BASS_DSHOW;
 
 type
   TForm1 = class(TForm)
@@ -26,6 +26,7 @@ type
     xpmnfst1: TXPManifest;
     pb2: TPaintBox;
     Timer4: TTimer;
+    btn5: TButton;
     procedure FormCreate(Sender: TObject);
     procedure PlayStrem;
     procedure btn4Click(Sender: TObject);
@@ -45,6 +46,7 @@ type
     procedure pb1MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure Timer4Timer(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
   private
     { Private declarations }
     modc: Integer;
@@ -65,7 +67,11 @@ var
 
 implementation
 
+uses Unit2;
+
 {$R *.dfm}
+{$R bass.res}
+
 
 
 procedure TForm1.Error(msg: string);
@@ -270,6 +276,13 @@ begin
    Canvas.Rectangle(268,100,276,100-levelR);
  end;
 end;
+end;
+
+procedure TForm1.btn5Click(Sender: TObject);
+begin
+ Form2.btn1Click(Sender);
+ AnimateWindow(Form2.Handle, 1000, AW_VER_NEGATIVE);
+ Form2.show
 end;
 
 end.
