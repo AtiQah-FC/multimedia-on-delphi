@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 776
-  Top = 166
+  Left = 897
+  Top = 127
   Width = 530
   Height = 375
   Caption = 'Form1'
@@ -118,8 +118,8 @@ object Form1: TForm1
     OnMouseDown = pb1MouseDown
   end
   object btn5: TButton
-    Left = 392
-    Top = 144
+    Left = 432
+    Top = 104
     Width = 75
     Height = 25
     Caption = 'Video'
@@ -127,13 +127,22 @@ object Form1: TForm1
     OnClick = btn5Click
   end
   object btn7: TButton
-    Left = 392
-    Top = 112
+    Left = 352
+    Top = 104
     Width = 75
     Height = 25
     Caption = 'Equalaizer'
     TabOrder = 9
     OnClick = btn7Click
+  end
+  object btn8: TButton
+    Left = 392
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = 'Record'
+    TabOrder = 10
+    OnClick = btn8Click
   end
   object dlgOpen1: TOpenDialog
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
