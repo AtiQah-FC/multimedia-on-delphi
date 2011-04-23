@@ -1,8 +1,8 @@
 object Form1: TForm1
   Left = 776
   Top = 166
-  Width = 591
-  Height = 395
+  Width = 530
+  Height = 375
   Caption = 'Form1'
   Color = clGray
   TransparentColorValue = clWhite
@@ -26,16 +26,14 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 64
     Top = 272
-    Width = 32
+    Width = 3
     Height = 13
-    Caption = 'Label1'
   end
   object Label2: TLabel
-    Left = 416
-    Top = 264
-    Width = 32
+    Left = 403
+    Top = 272
+    Width = 3
     Height = 13
-    Caption = 'Label2'
   end
   object pb2: TPaintBox
     Left = 128
@@ -75,7 +73,7 @@ object Form1: TForm1
     OnClick = btn1Click
   end
   object btn2: TButton
-    Left = 352
+    Left = 392
     Top = 40
     Width = 75
     Height = 25
@@ -93,7 +91,7 @@ object Form1: TForm1
     OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 456
+    Left = 432
     Top = 8
     Width = 75
     Height = 25
@@ -102,8 +100,8 @@ object Form1: TForm1
     OnClick = btn4Click
   end
   object btn6: TButton
-    Left = 456
-    Top = 41
+    Left = 432
+    Top = 73
     Width = 75
     Height = 24
     Caption = 'RMove'
@@ -120,8 +118,8 @@ object Form1: TForm1
     OnMouseDown = pb1MouseDown
   end
   object btn5: TButton
-    Left = 496
-    Top = 184
+    Left = 392
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Video'
@@ -129,8 +127,8 @@ object Form1: TForm1
     OnClick = btn5Click
   end
   object btn7: TButton
-    Left = 496
-    Top = 128
+    Left = 392
+    Top = 112
     Width = 75
     Height = 25
     Caption = 'Equalaizer'
@@ -139,33 +137,33 @@ object Form1: TForm1
   end
   object dlgOpen1: TOpenDialog
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
-    Left = 536
-    Top = 304
+    Left = 192
+    Top = 312
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 472
-    Top = 304
+    Left = 64
+    Top = 312
   end
   object Timer2: TTimer
     OnTimer = Timer2Timer
-    Left = 504
-    Top = 304
+    Left = 96
+    Top = 312
   end
   object Timer3: TTimer
     Interval = 1
     OnTimer = Timer3Timer
-    Left = 440
-    Top = 304
+    Left = 128
+    Top = 312
   end
   object xpmnfst1: TXPManifest
-    Left = 408
-    Top = 304
+    Left = 224
+    Top = 312
   end
   object Timer4: TTimer
     Interval = 10
     OnTimer = Timer4Timer
-    Left = 504
-    Top = 272
+    Left = 160
+    Top = 312
   end
 end

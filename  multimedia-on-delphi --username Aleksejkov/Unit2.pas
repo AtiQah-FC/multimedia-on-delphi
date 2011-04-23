@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls,BASS_DSHOW, ComCtrls, Bass, ExtDlgs,
-  XPMan, Menus, ShellApi;
+  XPMan, Menus;
 
 type
   TForm2 = class(TForm)

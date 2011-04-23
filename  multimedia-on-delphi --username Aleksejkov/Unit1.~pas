@@ -101,7 +101,6 @@ begin
 	if not BASS_Init(-1, 44100, 0, Handle, nil) then
 		Error('Error initializing audio!');
   AnimateWindow(Form1.Handle, 1000, AW_CENTER);
-  BASS_Start();
   BASS_SetConfig(BASS_CONFIG_BUFFER,1000);
 end;
 
@@ -114,7 +113,7 @@ if (lst1.ItemIndex<>-1) and (BASS_ChannelIsActive(stream)<>BASS_ACTIVE_PLAYING) 
       Bass_ChannelPlay(stream, false)
     else
       begin
-        stream:=Bass_StreamCreateFile(false, PChar(lst1.Items[lst1.ItemIndex]),0,0,BASS_SAMPLE_LOOP);
+        stream:=Bass_StreamCreateFile(false, PChar(lst1.Items[lst1.ItemIndex]),0,0,0);
         Bass_ChannelPlay(stream, false);
       end;
 
