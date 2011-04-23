@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 792
-  Top = 144
+  Left = 1097
+  Top = 157
   Width = 591
   Height = 395
   Caption = 'Form1'
@@ -118,6 +118,15 @@ object Form1: TForm1
     Max = 200
     TabOrder = 7
     OnMouseDown = pb1MouseDown
+  end
+  object btn5: TButton
+    Left = 456
+    Top = 72
+    Width = 75
+    Height = 25
+    Caption = 'Video'
+    TabOrder = 8
+    OnClick = btn5Click
   end
   object dlgOpen1: TOpenDialog
     Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
