@@ -63,33 +63,32 @@ procedure EQ;
 var
   i       : Byte;
 begin
-
     for i:=1 to 12 do
      EQ_MAS[i]:= BASS_ChannelSetFX(stream, BASS_FX_DX8_PARAMEQ, 1);
-    EQ_FX.fCenter:=80;
-    BASS_FXSetParameters(EQ_MAS[1], @EQ_FX);
-    EQ_FX.fCenter:=170;
-    BASS_FXSetParameters(EQ_MAS[2], @EQ_FX);
-    EQ_FX.fCenter:=310;
-    BASS_FXSetParameters(EQ_MAS[3], @EQ_FX);
-    EQ_FX.fCenter:=600;
-    BASS_FXSetParameters(EQ_MAS[4], @EQ_FX);
-    EQ_FX.fCenter:=1000;
-    BASS_FXSetParameters(EQ_MAS[5], @EQ_FX);
-    EQ_FX.fCenter:=3000;
-    BASS_FXSetParameters(EQ_MAS[6], @EQ_FX);
-    EQ_FX.fCenter:=6000;
-    BASS_FXSetParameters(EQ_MAS[7], @EQ_FX);
-    EQ_FX.fCenter:=12000;
-    BASS_FXSetParameters(EQ_MAS[8], @EQ_FX);
-    EQ_FX.fCenter:=14000;
-    BASS_FXSetParameters(EQ_MAS[9], @EQ_FX);
-    EQ_FX.fCenter:=16000;
-    BASS_FXSetParameters(EQ_MAS[10], @EQ_FX);
-    BASS_FXSetParameters(EQ_MAS[11], @EQ_FX);
-    EQ_FX.fGain:=0;
-    EQ_FX.fBandwidth:=2.5;
-    BASS_FXSetParameters(EQ_MAS[11], @EQ_FX);
+     EQ_FX.fCenter:=80;
+     BASS_FXSetParameters(EQ_MAS[1], @EQ_FX);
+     EQ_FX.fCenter:=170;
+     BASS_FXSetParameters(EQ_MAS[2], @EQ_FX);
+     EQ_FX.fCenter:=310;
+     BASS_FXSetParameters(EQ_MAS[3], @EQ_FX);
+     EQ_FX.fCenter:=600;
+     BASS_FXSetParameters(EQ_MAS[4], @EQ_FX);
+     EQ_FX.fCenter:=1000;
+     BASS_FXSetParameters(EQ_MAS[5], @EQ_FX);
+     EQ_FX.fCenter:=3000;
+     BASS_FXSetParameters(EQ_MAS[6], @EQ_FX);
+     EQ_FX.fCenter:=6000;
+     BASS_FXSetParameters(EQ_MAS[7], @EQ_FX);
+     EQ_FX.fCenter:=12000;
+     BASS_FXSetParameters(EQ_MAS[8], @EQ_FX);
+     EQ_FX.fCenter:=14000;
+     BASS_FXSetParameters(EQ_MAS[9], @EQ_FX);
+     EQ_FX.fCenter:=16000;
+     BASS_FXSetParameters(EQ_MAS[10], @EQ_FX);
+     BASS_FXSetParameters(EQ_MAS[11], @EQ_FX);
+     EQ_FX.fGain:=0;
+     EQ_FX.fBandwidth:=2.5;
+     BASS_FXSetParameters(EQ_MAS[11], @EQ_FX);
 end;
 procedure TForm3.TrackBar1Change(Sender: TObject);
 begin

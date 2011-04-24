@@ -50,7 +50,7 @@ implementation
 uses Unit1;
 
 {$R *.dfm}
-
+//процедура инициализации потока
 procedure TForm2.FormCreate(Sender: TObject);
 var dir: string;
 begin
@@ -64,7 +64,7 @@ begin
  BASS_DSHOW_LoadPlugin('BASS_DSHOW_FFMPEG.dll',CLSID_DSHOWPLUGIN ,nil);
 end;
 
-
+//процедура открытия видео файла
 procedure TForm2.btn1Click(Sender: TObject);
 begin
   dlgOpen1.Title  := 'Open Files';
@@ -84,13 +84,13 @@ begin
      btn2Click(Sender);
     end;
 end;
-
+//процедура кнопки Play
 procedure TForm2.btn2Click(Sender: TObject);
 begin
   if(paused=true)then paused:=true;
     BASS_ChannelPlay(chan, False);
 end;
-
+//процедура кнопки pause
 procedure TForm2.btn3Click(Sender: TObject);
 begin
   if(paused=false) then
@@ -104,12 +104,12 @@ begin
      paused:=false;
    end;
 end;
-
+//процедура разворачивания в полноэкранный режим
 procedure TForm2.pnl1DblClick(Sender: TObject);
 begin
   BASS_DSHOW_ChannelSetFullscreen(chan,true);
 end;
-
+//процедура перемотки
 procedure TForm2.scScroll(Sender: TObject; ScrollCode: TScrollCode;
   var ScrollPos: Integer);
 begin

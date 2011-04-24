@@ -74,10 +74,9 @@ implementation
 uses Unit2, EQ_DEMO, Trecord;
 
 {$R *.dfm}
-{$R bass.res}
 
 
-
+//показ ошибок при инициализации потока
 procedure TForm1.Error(msg: string);
 var
 	s: string;
@@ -85,7 +84,7 @@ begin
 	s := msg + #13#10 + '(Error code: ' + IntToStr(BASS_ErrorGetCode) + ')';
 	MessageBox(Handle, PChar(s), nil, 0);
 end;
-
+// процедура инициализации потока
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 	modc := 0;		// music module count
@@ -106,10 +105,10 @@ begin
   BASS_SetConfig(BASS_CONFIG_BUFFER,1000);
 end;
 
-
-procedure TForm1.PlayStrem;
+//процедура воспроизведения файла
+procedure TForm1.PlayStrem; 
 begin
-if (lst1.ItemIndex<>-1) and (BASS_ChannelIsActive(stream)<>BASS_ACTIVE_PLAYING) then
+if (lst1.ItemIndex<>-1) and (BASS_ChannelIsActive(stream)<>BASS_ACTIVE_PLAYING) then //проверка условий при возможно воспроизведение
   begin
     if BASS_ChannelIsActive(stream)=BASS_ACTIVE_PAUSED then
       Bass_ChannelPlay(stream, false)
@@ -122,22 +121,22 @@ if (lst1.ItemIndex<>-1) and (BASS_ChannelIsActive(stream)<>BASS_ACTIVE_PLAYING) 
   end;
   ratio:=BASS_ChannelGetLength(stream,BASS_POS_BYTE)/pb1.Max
 end;
-
+//процедура загрузки файлов в плейлист
 procedure TForm1.btn4Click(Sender: TObject);
 begin
   LoadMediaFile(mDir,dlgOpen1,lst1);
 end;
-
+//процедура удаления из плейлиста
 procedure TForm1.btn6Click(Sender: TObject);
 begin
   lst1.Items.Delete(lst1.ItemIndex);
 end;
-
+//процедура кнопки Stop
 procedure TForm1.btn2Click(Sender: TObject);
 begin
   Bass_channelstop (stream)
 end;
-
+//процедура воспроизведени файлов по дабл-клику по названию в плейлисте
 procedure TForm1.lst1DblClick(Sender: TObject);
 begin
   if(stream<>0) then Bass_StreamFree(stream);
@@ -145,12 +144,12 @@ begin
   pb1.Min:=0;
   pb1.Position:=pb1.Min;
 end;
-
+//процедура кнопки Play
 procedure TForm1.btn1Click(Sender: TObject);
 begin
   PlayStrem;
 end;
-
+//процедура изменения громкости потока
 procedure TForm1.TrackBar1Change(Sender: TObject);
 var
    volume:Real;
@@ -158,7 +157,7 @@ begin
    volume:= ((TrackBar1.Max - TrackBar1.Position) / 100);
    BASS_ChannelSetAttribute(stream, BASS_ATTRIB_VOL, volume);
 end;
-
+//процедура кнопеи Pause
 procedure TForm1.btn3Click(Sender: TObject);
 begin
   IF btn3.Caption= 'Pause' then
@@ -172,7 +171,7 @@ begin
        btn3.Caption:= 'Pause';
    end;
 end;
-
+//отображение прогресса воспроизведения
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
   if track= false then
@@ -183,7 +182,7 @@ procedure TForm1.FormDestroy(Sender: TObject);
 begin
   bass_free();
 end;
-
+//процедура показа времени воспроизведения, и всего времени медиа-файла
 procedure TForm1.Timer2Timer(Sender: TObject);
 var  TrackLen: Double;
      TrackPos: Double;
@@ -201,7 +200,7 @@ begin
   Label1.Caption:= Time1;
   label2.Caption:=Time2;
 end;
-
+//процедура загрузки путей к файлам в плейлист
 procedure TForm1.LoadMediaFile(mDir: TLabel; OpenFile: TOpenDialog;
   List: TListBox);
 var
@@ -219,13 +218,13 @@ begin
     mDir.Caption:= Dir + '\';
   end;
 end;
-
+//переключение на следующий трек при окончании текущего
 procedure TForm1.Timer3Timer(Sender: TObject);
 begin
   if BASS_ChannelGetPosition(stream, 0)=BASS_ChannelGetLength(stream, 0) then
      NextTrack;
 end;
-
+//процедура переключения на следующий трек при окончании текущего
 procedure TForm1.NextTrack;
 begin
   if lst1.ItemIndex<lst1.Count-1 then
@@ -241,7 +240,7 @@ begin
       PlayStrem;
     end;
 end;
-
+//процедура перемотки до указанной позиции
 procedure TForm1.pb1MouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
@@ -251,7 +250,7 @@ if track=False then
    PlayStrem;
   end;
 end;
-
+//процедура визуализации потока
 procedure TForm1.Timer4Timer(Sender: TObject);
 type  fftdata = array[1..8192] of single;
 var data : fftdata;
@@ -282,20 +281,20 @@ begin
  end;
 end;
 end;
-
+//показ формы для воспроизведения видео
 procedure TForm1.btn5Click(Sender: TObject);
 begin
  Form2.btn1Click(Sender);
  Form2.show
 end;
-
+//показ эквалайзера
 procedure TForm1.btn7Click(Sender: TObject);
 begin
   if stream<>0 then
   EQ;
   Form3.show;
 end;
-
+//показ компонента воспроизведения звука
 procedure TForm1.btn8Click(Sender: TObject);
 begin
   form4.Show;
